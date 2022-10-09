@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { ServerElement } from "src/types/ServerElement";
 
 @Component({
   selector: "app-server-element",
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from "@angular/core";
   styleUrls: ["./server-element.component.css"],
 })
 export class ServerElementComponent implements OnInit {
-  @Input("srvElement") element: { name: string; type: string; content: string };
+  @Input("srvElement") element: ServerElement;
 
   ngOnInit(): void {}
 }

@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ServerElement } from "src/types/ServerElement";
 
 @Component({
   selector: "app-root",
@@ -6,32 +7,21 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  newServerName = "";
-  newServerContent = "";
-  serverElements: { name: string; type: string; content: string }[] = [
-    { name: "test", type: "server", content: "a test content" },
-  ];
+  serverElements: ServerElement[] = [];
 
-  resetForm = () => {
-    this.newServerContent = "";
-    this.newServerName = "";
-  };
-
-  onAddServer() {
+  onAddServer = (serverElement: Omit<ServerElement, "type">) => {
     this.serverElements.push({
       type: "server",
-      name: this.newServerName,
-      content: this.newServerContent,
+      name: serverElement.name,
+      content: serverElement.content,
     });
-    this.resetForm();
-  }
+  };
 
-  onAddBlueprint() {
+  onAddBlueprint = (serverElement: Omit<ServerElement, "type">) => {
     this.serverElements.push({
       type: "blueprint",
-      name: this.newServerName,
-      content: this.newServerContent,
+      name: serverElement.name,
+      content: serverElement.content,
     });
-    this.resetForm();
-  }
+  };
 }
