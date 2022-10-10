@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <!-- catching event object with $event -->
+      <!-- first handler is handled in one way data binding -->
+      <!--  the second one, two way data binding, catching event object with $event -->
       <app-cockpit [onClickAddServer]="onAddServer" (onClickAddBlueprint)="onAddBlueprint($event)">
       </app-cockpit>
     </div>

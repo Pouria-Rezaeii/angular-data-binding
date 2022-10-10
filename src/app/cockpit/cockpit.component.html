@@ -2,7 +2,8 @@
 <label>Server Name</label>
 <input type="text" class="form-control" [(ngModel)]="newServerName">
 <label>Server Content</label>
-<input type="text" class="form-control" [(ngModel)]="newServerContent">
+<input type="text" class="form-control" #serverContentInput>
 <br>
-<button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+<!-- using local reference for server content input -->
+<button class="btn btn-primary" (click)="onAddServer(serverContentInput)">Add Server</button>
 <button class="btn btn-primary" (click)="onAddBlueprint()">Add Server Blueprint</button>
